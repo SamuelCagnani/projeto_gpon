@@ -263,7 +263,7 @@ BUILD SUCCESS
 ## Decisões de Design
 
 ### Por que MVC?
-O enunciado exige separação entre lógica de cálculo e exibição (§Dicas, item 3). O MVC garante que o pacote `model/` seja testável sem levantar a interface gráfica.
+O MVC foi adotado para garantir que a lógica de cálculo de propagação fique completamente isolada da interface gráfica. Com isso, o pacote `model/` não possui nenhuma dependência do JavaFX, permitindo que todos os 54 testes unitários e de integração sejam executados diretamente via JUnit, sem necessidade de levantar a janela da aplicação.
 
 ### Por que Enum para constantes do domínio?
 `ComprimentoOnda`, `ClasseGPON` e `TipoAlerta` são conjuntos fechados. Enums garantem type-safety, evitam "magic strings" e permitem associar dados (ex: atenuação em dB/km) a cada constante.
