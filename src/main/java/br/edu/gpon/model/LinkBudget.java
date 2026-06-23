@@ -107,11 +107,13 @@ public class LinkBudget {
     private void calcularPTx() {
         double atenuacao = calcularAtenuacaoTotal();
         resultado = pRx + atenuacao;
+        pTx = resultado;
     }
 
     private void calcularPRx() {
         double atenuacao = calcularAtenuacaoTotal();
         resultado = pTx - atenuacao;
+        pRx = resultado;
     }
 
     private void calcularDistancia() {
@@ -127,6 +129,7 @@ public class LinkBudget {
                     "Distância calculada negativa (" + String.format("%.2f", resultado)
                     + " km). Verifique os valores fornecidos: a potência disponível é insuficiente.");
         }
+        distancia = resultado;
     }
 
     private void calcularSplitter() {
@@ -142,6 +145,7 @@ public class LinkBudget {
                     "Atenuação do splitter calculada negativa (" + String.format("%.2f", atenuacaoSplitter)
                     + " dB). Verifique os valores fornecidos.");
         }
+        splitRatio = 1;
     }
 
     private void calcularConectores() {
@@ -157,6 +161,7 @@ public class LinkBudget {
                     "Número de conectores calculado negativo (" + String.format("%.2f", resultado)
                     + "). Verifique os valores fornecidos.");
         }
+        conectores = (int) Math.round(resultado);
     }
 
     private void calcularFusoes() {
@@ -172,6 +177,7 @@ public class LinkBudget {
                     "Número de fusões calculado negativo (" + String.format("%.2f", resultado)
                     + "). Verifique os valores fornecidos.");
         }
+        fusoes = (int) Math.round(resultado);
     }
 
     private void calcularMargem() {
@@ -180,6 +186,7 @@ public class LinkBudget {
                 + conectores * Constantes.PERDA_POR_CONECTOR_DB
                 + fusoes * Constantes.PERDA_POR_FUSAO_DB;
         resultado = pTx - pRx - atenuacao;
+        margem = resultado;
     }
 
     public double calcularAtenuacaoTotal() {
