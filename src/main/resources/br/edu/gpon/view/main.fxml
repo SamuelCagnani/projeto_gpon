@@ -51,34 +51,34 @@
         </columnConstraints>
 
         <!-- Linha 0 -->
-        <Label text="P_tx (dBm):" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+        <Label text="P_tx (dBm):" styleClass="form-label" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
         <TextField fx:id="fieldPTx" promptText="Ex: 3.0" GridPane.rowIndex="0" GridPane.columnIndex="1"
                    styleClass="input-field"/>
 
-        <Label text="P_rx (dBm):" GridPane.rowIndex="0" GridPane.columnIndex="2"/>
+        <Label text="P_rx (dBm):" styleClass="form-label" GridPane.rowIndex="0" GridPane.columnIndex="2"/>
         <TextField fx:id="fieldPRx" promptText="Ex: -28.0" GridPane.rowIndex="0" GridPane.columnIndex="3"
                    styleClass="input-field"/>
 
         <!-- Linha 1 -->
-        <Label text="Distância (km):" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+        <Label text="Distância (km):" styleClass="form-label" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
         <TextField fx:id="fieldDistancia" promptText="Ex: 5.0" GridPane.rowIndex="1" GridPane.columnIndex="1"
                    styleClass="input-field"/>
 
-        <Label text="Splitter:" GridPane.rowIndex="1" GridPane.columnIndex="2"/>
+        <Label text="Splitter:" styleClass="form-label" GridPane.rowIndex="1" GridPane.columnIndex="2"/>
         <ComboBox fx:id="cmbSplitter" promptText="Selecione" prefWidth="160"
                   GridPane.rowIndex="1" GridPane.columnIndex="3"/>
 
         <!-- Linha 2 -->
-        <Label text="Conectores:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+        <Label text="Conectores:" styleClass="form-label" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
         <TextField fx:id="fieldConectores" promptText="Ex: 2" GridPane.rowIndex="2" GridPane.columnIndex="1"
                    styleClass="input-field"/>
 
-        <Label text="Fusões:" GridPane.rowIndex="2" GridPane.columnIndex="2"/>
+        <Label text="Fusões:" styleClass="form-label" GridPane.rowIndex="2" GridPane.columnIndex="2"/>
         <TextField fx:id="fieldFusoes" promptText="Ex: 3" GridPane.rowIndex="2" GridPane.columnIndex="3"
                    styleClass="input-field"/>
 
         <!-- Linha 3 -->
-        <Label text="Margem (dB):" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+        <Label text="Margem (dB):" styleClass="form-label" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
         <TextField fx:id="fieldMargem" promptText="Ex: 3.0" GridPane.rowIndex="3" GridPane.columnIndex="1"
                    styleClass="input-field"/>
     </GridPane>
