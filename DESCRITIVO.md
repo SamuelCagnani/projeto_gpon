@@ -2,7 +2,7 @@
 
 **Projeto Interdisciplinar:** Propagação de Ondas Eletromagnéticas × Engenharia de Software
 **Tecnologia:** Java 17 + JavaFX + Maven
-**Equipe:** Dupla
+**Equipe:** Ana Carolina Fuentes e Samuel de Mello Cagnani
 
 ---
 
