@@ -1,15 +1,22 @@
 package br.edu.gpon;
 
 import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 public class MainApp extends Application {
 
     @Override
-    public void start(Stage primaryStage) {
+    public void start(Stage primaryStage) throws Exception {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/br/edu/gpon/view/main.fxml"));
+        Parent root = loader.load();
+
+        Scene scene = new Scene(root, 720, 680);
         primaryStage.setTitle("Calculadora GPON — Link Budget");
-        primaryStage.setWidth(800);
-        primaryStage.setHeight(600);
+        primaryStage.setScene(scene);
+        primaryStage.setResizable(false);
         primaryStage.show();
     }
 

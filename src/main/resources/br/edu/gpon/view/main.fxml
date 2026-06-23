@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<VBox xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="br.edu.gpon.controller.MainController"
+      spacing="8" alignment="TOP_CENTER"
+      stylesheets="@styles.css">
+
+    <padding>
+        <Insets top="16" right="24" bottom="16" left="24"/>
+    </padding>
+
+    <!-- Título -->
+    <Label text="Calculadora GPON — Link Budget" styleClass="title-label">
+        <font><Font name="System Bold" size="20"/></font>
+    </Label>
+    <Label text="Deixe exatamente 1 campo vazio para calcular a variável faltante"
+           styleClass="subtitle-label"/>
+
+    <Separator/>
+
+    <!-- Configuração do Enlace -->
+    <HBox spacing="24" alignment="CENTER">
+        <VBox spacing="4" alignment="CENTER">
+            <Label text="Direção" styleClass="section-label"/>
+            <ToggleButton fx:id="btnDownstream" text="Downstream (1490nm)"
+                          styleClass="toggle-left" selected="true"/>
+            <ToggleButton fx:id="btnUpstream" text="Upstream (1310nm)"
+                          styleClass="toggle-right" selected="false"/>
+        </VBox>
+
+        <VBox spacing="4" alignment="CENTER">
+            <Label text="Classe GPON" styleClass="section-label"/>
+            <ComboBox fx:id="cmbClasseGPON" promptText="Selecione a classe" prefWidth="120"/>
+        </VBox>
+    </HBox>
+
+    <Separator/>
+
+    <!-- Campos de Entrada -->
+    <GridPane hgap="16" vgap="10" alignment="CENTER">
+        <columnConstraints>
+            <ColumnConstraints halignment="RIGHT" minWidth="80"/>
+            <ColumnConstraints halignment="LEFT" minWidth="160"/>
+            <ColumnConstraints halignment="RIGHT" minWidth="80"/>
+            <ColumnConstraints halignment="LEFT" minWidth="160"/>
+        </columnConstraints>
+
+        <!-- Linha 0 -->
+        <Label text="P_tx (dBm):" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+        <TextField fx:id="fieldPTx" promptText="Ex: 3.0" GridPane.rowIndex="0" GridPane.columnIndex="1"
+                   styleClass="input-field"/>
+
+        <Label text="P_rx (dBm):" GridPane.rowIndex="0" GridPane.columnIndex="2"/>
+        <TextField fx:id="fieldPRx" promptText="Ex: -28.0" GridPane.rowIndex="0" GridPane.columnIndex="3"
+                   styleClass="input-field"/>
+
+        <!-- Linha 1 -->
+        <Label text="Distância (km):" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+        <TextField fx:id="fieldDistancia" promptText="Ex: 5.0" GridPane.rowIndex="1" GridPane.columnIndex="1"
+                   styleClass="input-field"/>
+
+        <Label text="Splitter:" GridPane.rowIndex="1" GridPane.columnIndex="2"/>
+        <ComboBox fx:id="cmbSplitter" promptText="Selecione" prefWidth="160"
+                  GridPane.rowIndex="1" GridPane.columnIndex="3"/>
+
+        <!-- Linha 2 -->
+        <Label text="Conectores:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+        <TextField fx:id="fieldConectores" promptText="Ex: 2" GridPane.rowIndex="2" GridPane.columnIndex="1"
+                   styleClass="input-field"/>
+
+        <Label text="Fusões:" GridPane.rowIndex="2" GridPane.columnIndex="2"/>
+        <TextField fx:id="fieldFusoes" promptText="Ex: 3" GridPane.rowIndex="2" GridPane.columnIndex="3"
+                   styleClass="input-field"/>
+
+        <!-- Linha 3 -->
+        <Label text="Margem (dB):" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+        <TextField fx:id="fieldMargem" promptText="Ex: 3.0" GridPane.rowIndex="3" GridPane.columnIndex="1"
+                   styleClass="input-field"/>
+    </GridPane>
+
+    <!-- Botão Calcular -->
+    <HBox alignment="CENTER" spacing="12">
+        <Button fx:id="btnCalcular" text="Calcular" onAction="#onCalcular"
+                styleClass="calculate-button" defaultButton="true" prefWidth="160"/>
+        <Button fx:id="btnLimpar" text="Limpar" onAction="#onLimpar"
+                styleClass="clear-button" prefWidth="100"/>
+    </HBox>
+
+    <Separator/>
+
+    <!-- Resultado -->
+    <VBox fx:id="boxResultado" spacing="4" alignment="CENTER" styleClass="result-box">
+
+        <HBox spacing="8" alignment="CENTER">
+            <Label text="Variável calculada:" styleClass="result-label"/>
+            <Label fx:id="labelVariavel" text="—" styleClass="result-value"/>
+        </HBox>
+
+        <HBox spacing="8" alignment="CENTER">
+            <Label text="Valor:" styleClass="result-label"/>
+            <Label fx:id="labelValor" text="—" styleClass="result-value"/>
+        </HBox>
+
+        <Label fx:id="labelAtenuacao" text="" styleClass="attenuation-label"/>
+    </VBox>
+
+    <!-- Alertas -->
+    <ListView fx:id="listAlertas" prefHeight="140" styleClass="alert-list"/>
+</VBox>
