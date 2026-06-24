@@ -26,12 +26,12 @@ Desenvolver uma calculadora que, diferente de sistemas lineares, seja capaz de *
 
 | ID | Descrição | Origem |
 |----|-----------|--------|
-| **RF1** | O sistema deve calcular qualquer variável da fórmula de Link Budget, desde que as demais sejam fornecidas pelo usuário | Enunciado §7 |
-| **RF2** | O sistema deve validar os dados de entrada com base nos padrões da norma ITU-T G.984 e gerar alertas quando valores estiverem fora das faixas esperadas | Enunciado §7 |
-| **RF3** | O sistema deve suportar os dois comprimentos de onda do GPON: downstream (1490 nm) e upstream (1310 nm), com atenuações distintas para cada um | Enunciado §2 |
+| **RF1** | O sistema deve calcular qualquer variável da fórmula de Link Budget, desde que as demais sejam fornecidas pelo usuário | Enunciado 7 |
+| **RF2** | O sistema deve validar os dados de entrada com base nos padrões da norma ITU-T G.984 e gerar alertas quando valores estiverem fora das faixas esperadas | Enunciado 7 |
+| **RF3** | O sistema deve suportar os dois comprimentos de onda do GPON: downstream (1490 nm) e upstream (1310 nm), com atenuações distintas para cada um | Enunciado 2 |
 | **RF4** | A interface deve indicar visualmente qual campo está vazio (a variável a ser calculada) e preenchê-lo com o resultado após o cálculo | Derivado do RF1 |
 | **RF5** | O sistema deve validar entradas em tempo real (durante a digitação), impedindo caracteres não numéricos e sinalizando valores fora de faixa | Enunciado §Dicas |
-| **RF6** | O sistema deve exibir alertas categorizados por severidade (informação, aviso, erro) com base nos limites da ITU-T G.984 | Enunciado §3 |
+| **RF6** | O sistema deve exibir alertas categorizados por severidade (informação, aviso, erro) com base nos limites da ITU-T G.984 | Enunciado 3 |
 
 ### 2.2 Requisitos Não Funcionais
 
